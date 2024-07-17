@@ -1,0 +1,23 @@
+$primary-color: white;
+$secondary-color: white;
+$background-color: white;
+$background-secondary-color: white;
+$text-color: white;
+$text-secondary-color: white;
+
+$primary: $primary-color;
+$secondary: $secondary-color;
+
+$body-bg: $background-color;
+$body-color: $text-color;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+:root {
+  --background: #{$background-color};
+  --background-secondary: #{$background-secondary-color};
+  --primary: #{$primary-color};
+  --secondary: #{$secondary-color};
+  --text: #{$text-color};
+  --text-secondary: #{$text-secondary-color};
+}
