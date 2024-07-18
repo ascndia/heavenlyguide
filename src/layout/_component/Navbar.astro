@@ -1,0 +1,116 @@
+---
+import NavbarItem from "./NavbarItem.astro";
+---
+
+<nav id="navbar" class="navbar bg-white sticky-top navbar-expand-md py-3">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <div class="fw-bold text-uppercase fs-5">
+        Heavenly<span class="text-primary fst-italic">Guide</span>
+      </div>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbar8"
+      aria-controls="navbar8"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span style="color: white;" class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar8">
+      <div class="navbar-content">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Liburan
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Tour</a></li>
+              <li><a class="dropdown-item" href="#">Ticket</a></li>
+              <li><a class="dropdown-item" href="#">Hotel</a></li>
+              <li><a class="dropdown-item" href="#">Paket Wisata</a></li>
+              <li><a class="dropdown-item" href="#">Cruise</a></li>
+              <li><a class="dropdown-item" href="#">Atraksi & Hiburan</a></li>
+              <li><a class="dropdown-item" href="#">Dokumen & Visa</a></li>
+              <li><a class="dropdown-item" href="#">Asuransi Perjalanan</a></li>
+            </ul>
+          </li>
+          <NavbarItem href="#about" title="Promo" />
+        </ul>
+      </div>
+    </div>
+    <div class="d-md-flex d-none gap-2">
+      <button class="btn btn-primary text-white fw-semibold">Login</button>
+      <button class="btn btn-outline-primary ms-2 fw-semibold">Register</button>
+    </div>
+  </div>
+</nav>
+<style lang="scss">
+  .navbar {
+    transition: 500ms;
+  }
+  .navbar-brand {
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    transition: 500ms;
+  }
+  .navbar-brand:hover {
+    color: var(--primary) !important;
+  }
+  .navbar-toggler {
+    z-index: 50;
+    padding: 4px 8px;
+  }
+
+  .navbar-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (max-width: 768px) {
+    .navbar {
+      max-height: 100vh;
+      overflow: auto !important;
+      ::-webkit-scrollbar {
+        display: block !important; /* Hides the scrollbar */
+      }
+      scrollbar-width: auto;
+    }
+    .navbar-content {
+      height: 100vh;
+      padding-top: 16px;
+      flex-direction: column;
+      width: 100%;
+      justify-content: start;
+      transition: all 0.4s;
+      background: inherit;
+    }
+    .navbar-nav {
+      width: 100%;
+    }
+  }
+  .dropdown-menu {
+    background-color: white;
+    border-color: rgb(219, 219, 219);
+  }
+  .dropdown-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 256px;
+    &:hover {
+      background-color: rgb(232, 245, 255);
+    }
+  }
+</style>

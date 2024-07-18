@@ -1,0 +1,57 @@
+---
+interface Props {
+  background: string;
+  hastag: string;
+  text: string;
+  desc: string;
+}
+const { background, hastag, text, desc } = Astro.props;
+---
+
+<div class="col">
+  <div class="overflow-hidden">
+    <div class="card border-0">
+      <div class="img"></div>
+      <div class="position-absolute">
+        <div class="text-white fw-bold display-2">{hastag}</div>
+        <h3 class="text-white text-capitalize">{text}</h3>
+        <div class="text-white">{desc}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<style define:vars={{ background }} lang="scss">
+  .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    .img {
+      transition: 500ms ease-out;
+      height: 376px;
+      width: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        var(--background);
+      object-fit: contain;
+      background-size: cover;
+      background-position: center;
+    }
+    > h1 {
+      font-weight: 650;
+      position: absolute;
+      z-index: 10;
+    }
+    &:hover {
+      .img {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+          var(--background);
+        object-fit: contain;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.05);
+      }
+    }
+  }
+</style>

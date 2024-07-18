@@ -1,0 +1,55 @@
+---
+import Container from "../../component/Container.astro";
+import Card from "../_component/InspirasiCard.astro";
+import S1 from "../../assets/inspiration/I1.jpg";
+import S2 from "../../assets/inspiration/I2.jpg";
+---
+
+<section id="inspirasi" class="bg-white py-4">
+  <Container>
+    <div class="content">
+      <div class="row row-cols-1 row-cols-md-2">
+        <div class="col col-md-5">
+          <div class="heading">
+            <h1 class="text-uppercase fs-1 fw-bold">
+              Inspirasi Destinasi Liburan
+            </h1>
+            <div class="text-secondary">
+              Pilih Destinasi liburan kamu dari Bulan - bulan Pilihan & Musim -
+              musim menarik yang tak terlupakan.
+            </div>
+          </div>
+        </div>
+        <div class="col mt-4 mt-md-0 col-md-7">
+          <div
+            class="row row-cols-1 gy-3 gy-md-0 row-cols-md-2 h-100 align-items-center"
+          >
+            <Card background=`url(${S1.src})` text="Bulan">
+              <i
+                slot="icon"
+                class="fa text-white fs-2 fa-calendar"
+                aria-hidden="true"></i>
+            </Card>
+            <Card background=`url(${S2.src})` text="Musim">
+              <i
+                slot="icon"
+                class="fa text-white fs-2 fa-cloud"
+                aria-hidden="true"></i>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+<style lang="scss">
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+  .heading {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      h1 {
+        font-size: larger !important;
+      }
+    }
+  }
+</style>
