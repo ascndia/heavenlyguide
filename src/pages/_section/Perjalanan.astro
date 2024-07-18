@@ -1,0 +1,43 @@
+---
+import Container from "../../component/Container.astro";
+import Card from "../_component/PerjalananCard.astro";
+import C1 from "../../assets/country/C1.jpg";
+import C2 from "../../assets/country/C2.jpg";
+import C3 from "../../assets/country/C3.jpg";
+import C4 from "../../assets/country/C4.webp";
+import C5 from "../../assets/country/C5.jpg";
+import C6 from "../../assets/country/C6.jpg";
+---
+
+<section id="perjalanan" class="pt-5 bg-white">
+  <Container>
+    <div class="content">
+      <div class="heading">
+        <h1 class="text-uppercase fs-1 fw-bold">Mulai Perjalanan anda</h1>
+      </div>
+    </div>
+  </Container>
+  <div class="mt-3">
+    <div class="row g-0 row-cols-1 row-cols-md-2">
+      <Card background=`url(${C1.src})` text="Japan" />
+      <Card background=`url(${C2.src})` text="united kingdom" />
+      <Card background=`url(${C3.src})` text="america" />
+      <Card background=`url(${C4.src})` text="france" />
+      <Card background=`url(${C5.src})` text="indonesia" />
+      <Card background=`url(${C6.src})` text="south korea" />
+      <!-- <Card />
+        <Card />
+        <Card /> -->
+    </div>
+  </div>
+</section>
+<style lang="scss">
+  .heading {
+    @media screen and (max-width: 768px) {
+      /* text-align: center; */
+      h1 {
+        font-size: larger !important;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,45 @@
+---
+import Container from "../../component/Container.astro";
+import Card from "../_component/ServiceCard.astro";
+import S1 from "../../assets/service/S1.jpg";
+import S2 from "../../assets/service/S2.jpg";
+import S3 from "../../assets/service/S3.jpg";
+import S4 from "../../assets/service/S4.jpg";
+import S5 from "../../assets/service/S5.jpg";
+import S6 from "../../assets/service/S6.jpg";
+import S7 from "../../assets/service/S7.jpg";
+import S8 from "../../assets/service/S8.jpg";
+---
+
+<section class="py-5 bg-secondary" id="feature">
+  <Container>
+    <div class="content">
+      <div class="heading">
+        <h1 class="text-uppercase fs-2 fw-bold">Produk dan Layanan kami</h1>
+        <div class="text-secondary">
+          Rekomendasi pilihan produk dan layanan untuk perjalanan Anda
+        </div>
+      </div>
+      <div class="row row-cols-2 mt-2 g-3 row-cols-md-3">
+        <Card background=`url(${S1.src})` text="Tour" />
+        <Card background=`url(${S2.src})` text="Ticket pesawat" />
+        <Card background=`url(${S3.src})` text="Hotel" />
+        <Card background=`url(${S4.src})` text="Paket Wisata" />
+        <Card background=`url(${S5.src})` text="Cruise" />
+        <Card background=`url(${S6.src})` text="Atraksi & Hiburan" />
+        <Card background=`url(${S7.src})` text="Dokumen & visa" />
+        <Card background=`url(${S8.src})` text="Asuransi" />
+      </div>
+    </div>
+  </Container>
+</section>
+<style lang="scss">
+  .heading {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      h1 {
+        font-size: larger !important;
+      }
+    }
+  }
+</style>

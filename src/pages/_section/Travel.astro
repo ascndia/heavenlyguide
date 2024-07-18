@@ -1,0 +1,78 @@
+---
+import Container from "../../component/Container.astro";
+import Bg from "../../assets/travel.jpg";
+const background = `url(${Bg.src})`;
+---
+
+<section id="travel" class="bg-white pb-5">
+  <div
+    class="d-flex position-relative justify-content-center align-items-center"
+  >
+    <div class="img"></div>
+    <div class="position-absolute">
+      <h2 class="text-white fw-bold">BUSINESS TRAVEL MANAGEMENT</h2>
+    </div>
+  </div>
+  <Container>
+    <div class="content">
+      <div class="pt-3">
+        <div class="row row-cols-2">
+          <div class="col">
+            <div>
+              <h4 class="fw-bold">Corporate Incentive</h4>
+              <div class="text-secondary">
+                Lebih dari sekedar pengaturan perjalanan ke luar negeri, Golden
+                Rama memahami bahwa insentif perjalanan wisata (travel
+                incentive) merupakan sebuah event yang harus dirancang dengan
+                kreativitas tingkat tinggi sesuai dengan kultur perusahaan Anda.
+              </div>
+              <div class="mt-4"><a href="#">Hubungi Kami</a></div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <h4 class="fw-bold">Corporate Incentive</h4>
+              <div class="text-secondary">
+                Lebih dari sekedar pengaturan perjalanan ke luar negeri, Golden
+                Rama memahami bahwa insentif perjalanan wisata (travel
+                incentive) merupakan sebuah event yang harus dirancang dengan
+                kreativitas tingkat tinggi sesuai dengan kultur perusahaan Anda.
+              </div>
+              <div class="mt-4"><a href="#">Hubungi Kami</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+<style define:vars={{ background }} lang="scss">
+  .row {
+    .col:first-child {
+      border-right: 1px dotted var(--background-secondary);
+      box-sizing: border-box;
+    }
+  }
+  .col {
+    h4,
+    a:not(:hover) {
+      color: var(--background-secondary);
+      text-decoration: none;
+    }
+    .text-secondary {
+      margin-top: 12px;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  }
+
+  .img {
+    height: 156px;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+      var(--background);
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
+  }
+</style>

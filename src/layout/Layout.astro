@@ -1,20 +1,26 @@
 ---
 import Navbar from "./_component/Navbar.astro";
 import Footer from "./_component/Footer.astro";
-import "../src/styles/styles.scss";
+import "../../src/styles/styles.scss";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/heavenlyguide/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Heavenly Guide - Home</title>
   </head>
   <body>
+    <!-- <script src={bootstrap}></script> -->
     <Navbar />
     <slot />
     <Footer />
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+      // Astro will bundle and process this automatically
+      import ; -->
+    <!-- </script> -->
   </body>
 </html>

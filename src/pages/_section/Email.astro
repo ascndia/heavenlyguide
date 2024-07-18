@@ -1,0 +1,44 @@
+---
+import Container from "../../component/Container.astro";
+---
+
+<section id="email" class="py-5 bg-secondary-blue">
+  <Container>
+    <div class="content">
+      <div class="text-center text-white">
+        <h1>TEMUKAN INSPIRASI UNTUK MENJELAJAH DUNIA</h1>
+        <div>
+          Masukkan alamat e-mail Anda untuk mendapatkan informasi menarik
+          seputar destinasi liburan terbaik serta promo terbaru kami.
+        </div>
+        <form action="#" class="mt-4 mx-auto">
+          <div class="bg-white input-group d-flex rounded-3">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="fa fa-envelope" aria-hidden="true"></i></span
+            >
+
+            <input
+              type="email"
+              name="email"
+              class="form-control bg-none"
+              id=""
+              placeholder="masukkan alamat email"
+            />
+
+            <button class="btn fw-semibold" type="submit">Kirim</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </Container>
+</section>
+<style lang="scss">
+  form {
+    width: 100%;
+    max-width: 480px;
+
+    button:hover {
+      color: var(--primary);
+    }
+  }
+</style>

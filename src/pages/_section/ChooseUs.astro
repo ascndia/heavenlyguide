@@ -1,0 +1,54 @@
+---
+import Container from "../../component/Container.astro";
+import Card from "../_component/ChooseUsCard.astro";
+import C1 from "../../assets/choose/C1.jpg";
+import C2 from "../../assets/choose/C2.jpg";
+import C3 from "../../assets/choose/C3.jpg";
+---
+
+<section id="chooseus" class="py-5">
+  <Container>
+    <div class="content">
+      <div class="heading">
+        <h1 class="text-uppercase fs-1 fw-bold">
+          MENGAPA MEMILIH HEAVENLY GUIDE
+        </h1>
+      </div>
+      <div class="mt-4">
+        <div class="row gy-5 gy-md-0 row-cols-1 row-cols-md-3">
+          <Card
+            hastag="#1"
+            text="Pelayanan Memuaskan"
+            background=`url(${C1.src})`
+            desc="Kepuasan pelanggan adalah prioritas kami dengan layanan responsif dan ramah."
+          />
+          <Card
+            hastag="#2"
+            text="Destinasi Menakjubkan"
+            background=`url(${C2.src})`
+            desc="Kami menawarkan pilihan destinasi yang unik dan menarik di seluruh dunia."
+          />
+          <Card
+            hastag="#3"
+            text="Harga Terjangkau"
+            background=`url(${C3.src})`
+            desc="Paket perjalanan kami dirancang untuk memberikan nilai terbaik dengan harga kompetitif."
+          />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+<style lang="scss">
+  section {
+    background-color: #f0f4f5;
+  }
+  .heading {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      h1 {
+        font-size: larger !important;
+      }
+    }
+  }
+</style>

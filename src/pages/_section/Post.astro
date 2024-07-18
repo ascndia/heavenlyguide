@@ -1,0 +1,78 @@
+---
+import Container from "../../component/Container.astro";
+import Card from "../_component/PostCard.astro";
+import C1 from "../../assets/service/S1.jpg";
+---
+
+<section id="post" class="py-5 bg-white">
+  <Container>
+    <div class="content">
+      <div class="heading text-center">
+        <h1 class="text-uppercase fs-1 fw-bold">LATEST TRAVEL POST</h1>
+      </div>
+      <div class="mt-4">
+        <div id="post-slide" class="d-flex gap-4 overflow-auto">
+          <Card img={C1.src} title="Lorem ipsum dolor sit amet" />
+          <Card img={C1.src} title="Lorem ipsum dolor sit amet" />
+          <Card img={C1.src} title="Lorem ipsum dolor sit amet" />
+          <Card img={C1.src} title="Lorem ipsum dolor sit amet" />
+          <Card img={C1.src} title="Lorem ipsum dolor sit amet" />
+          <Card img={C1.src} title="Lorem ipsum dolor sit amet" />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+<style lang="scss">
+  .heading {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      h1 {
+        font-size: larger !important;
+      }
+    }
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .d-flex::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .d-flex {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    cursor: pointer;
+  }
+</style>
+<script>
+  let mouseDown = false;
+  let startX: number, scrollLeft: number;
+  const slider = document.getElementById("post-slide") as HTMLElement;
+
+  const startDragging = (e: MouseEvent) => {
+    mouseDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  };
+
+  const stopDragging = (e: MouseEvent) => {
+    mouseDown = false;
+  };
+
+  const move = (e: MouseEvent) => {
+    e.preventDefault();
+    if (!mouseDown) {
+      return;
+    }
+    const x = e.pageX - slider.offsetLeft;
+    const scroll = x - startX;
+    slider.scrollLeft = scrollLeft - scroll;
+  };
+
+  // Add the event listeners
+  slider.addEventListener("mousemove", move, false);
+  slider.addEventListener("mousedown", startDragging, false);
+  slider.addEventListener("mouseup", stopDragging, false);
+  slider.addEventListener("mouseleave", stopDragging, false);
+</script>

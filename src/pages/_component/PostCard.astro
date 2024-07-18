@@ -1,0 +1,39 @@
+---
+interface Props {
+  img: string;
+  title: string;
+  href?: string;
+}
+const { img, title, href } = Astro.props;
+---
+
+<div class="col">
+  <div class="card rounded-3 bg-white">
+    <img alt={title} src={img} class="card-img-top" />
+
+    <div class="card-body">
+      <div class="fw-bold fs-5">{title}</div>
+    </div>
+  </div>
+</div>
+<style lang="scss">
+  .card {
+    min-width: 280px;
+    max-width: 480px;
+    scroll-snap-align: start;
+    border-color: rgb(229, 229, 229);
+    .card-img-top {
+      height: 240px;
+      object-fit: cover;
+      object-position: center;
+    }
+    img {
+      user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  }
+</style>

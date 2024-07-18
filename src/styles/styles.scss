@@ -1,9 +1,9 @@
-$primary-color: white;
+$primary-color: #eb891c;
 $secondary-color: white;
-$background-color: white;
-$background-secondary-color: white;
-$text-color: white;
-$text-secondary-color: white;
+$background-color: #f7f7f7;
+$background-secondary-color: #41778a;
+$text-color: #213c45;
+$text-secondary-color: #666666;
 
 $primary: $primary-color;
 $secondary: $secondary-color;
@@ -20,4 +20,23 @@ $body-color: $text-color;
   --secondary: #{$secondary-color};
   --text: #{$text-color};
   --text-secondary: #{$text-secondary-color};
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+  border-width: 2px;
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: white !important;
+  }
+}
+.text-secondary {
+  color: $text-secondary-color !important;
+}
+.bg-secondary {
+  background-color: $background-color !important;
+}
+.bg-secondary-blue {
+  background-color: $background-secondary-color !important;
 }

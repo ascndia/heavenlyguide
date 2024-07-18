@@ -1,0 +1,28 @@
+---
+interface Props {
+  background: string;
+  text: string;
+  href?: string;
+}
+const { background, text, href } = Astro.props;
+---
+
+<div class="col">
+  <div class="card border-0 rounded-4">
+    <slot name="icon" />
+    <div class="text-white fs-5 text-capitalize fw-semibold">{text}</div>
+  </div>
+</div>
+<style define:vars={{ background }} lang="scss">
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 128px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      var(--background);
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
